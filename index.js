@@ -17,10 +17,16 @@ servidor.get('/generos',(req,res)=> {
     res.send("drama, aventura")
     })
 
-servidor.get('filmes/posicao', (req,res)=>{
+servidor.get('/filmes/:posicao', (req,res)=>{
     let posicao = req.params.posicao
     const filmes = require("./database/filmes.json")
     res.send(filmes[posicao])
 })
+
+servidor.get('/busca/:trecho', (req, res)=>{
+    console.log("alguem acessou a rota")
+    res.send(req.params.trecho)
+})
+
 
 servidor.listen(3000)
