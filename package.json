@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/sergiomoura/filnemateca#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "nodemon": "^2.0.15",
     "uniqid": "^5.4.0"
   },
   "devDependencies": {}
