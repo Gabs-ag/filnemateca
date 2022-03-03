@@ -14,14 +14,14 @@ const FilmesController = {
         let filme = filmes[posicao]
         res.render('filme.ejs',{filme})
     },
-    buscarPorTrecho: (req, res) => {
-        let trecho = req.params.trecho;
+    busca: (req, res) => {
+        let trecho = req.query.busca;
         const filmes = require('../database/filmes.json');
         let filtradora = filme => {
             return filme.titulo.includes(trecho);
         }
-        let filmesFiltrados = filmes.filter(filtradora);
-        res.send(filmesFiltrados);
+        let resultadoDaBusca = filmes.filter(filtradora);
+        res.render('index.ejs', {filmes: resultadoDaBusca});
     },
     buscarPorId: (req, res) => {
     

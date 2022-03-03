@@ -10,7 +10,7 @@ router.get('/filme', FilmesController.listarFilmes);
 
 router.get('/filmes/:posicao', FilmesController.buscaPelaPosicao);
 
-router.get('/busca/:trecho', FilmesController.buscarPorTrecho);
+router.get('/busca', FilmesController.busca);
 
 router.get('/buscaporid/:id', FilmesController.buscarPorId);
 
