@@ -8,11 +8,11 @@ router.get('/', FilmesController.index);
 
 router.get('/filme', FilmesController.listarFilmes);
 
-router.get('/filmes/:posicao', FilmesController.buscaPelaPosicao);
+router.get('/filmes/:id', FilmesController.buscaPorId);
 
 router.get('/busca', FilmesController.busca);
 
-router.get('/buscaporid/:id', FilmesController.buscarPorId);
+router.get('/buscaporid/:id', FilmesController.buscaPorId);
 
 router.get('/generos/:genero',FilmesController.buscarPorGenero);
 

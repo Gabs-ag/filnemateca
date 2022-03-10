@@ -1,7 +1,9 @@
 const FilmesController = {
     index: (req, res) => {
         const filmes = require("../database/filmes.json")
-        res.render('index.ejs',{filmes})
+        res.render('index.ejs', {
+            filmes
+        })
     },
     listarFilmes: (req, res) => {
         const filmes = require('../database/filmes.json')
@@ -12,7 +14,9 @@ const FilmesController = {
         const filmes = require('../database/filmes.json');
 
         let filme = filmes[posicao]
-        res.render('filme.ejs',{filme})
+        res.render('filme.ejs', {
+            filme
+        })
     },
     busca: (req, res) => {
         let trecho = req.query.busca;
@@ -21,20 +25,34 @@ const FilmesController = {
             return filme.titulo.includes(trecho);
         }
         let resultadoDaBusca = filmes.filter(filtradora);
-        res.render('index.ejs', {filmes: resultadoDaBusca});
+        res.render('index.ejs', {
+            filmes: resultadoDaBusca
+        });
     },
-    buscarPorId: (req, res) => {
-    
+    buscaPorId: (req, res) => {
+        let id = req.params.id;
+        const filmes = require('../database/filmes.json')
+        let filtradora = filme => {
+            if (filme.id == id) {
+                return true
+            } else {
+                return false
+            }
+        }
+        const filme = filmes.find(filtradora)
+
+        res.render('filme.ejs', {
+            filme
+        })
     },
 
     buscarPorGenero: (req, res) => {
 
     },
- }
+}
 
 module.exports = FilmesController
 
 
 
 
-module.exports = FilmesController;
