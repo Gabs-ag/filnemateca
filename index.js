@@ -1,6 +1,7 @@
 // Importação da biblioteca Express
 const express = require('express');
-const path = require('path')
+const path = require('path');
+const middlewareGlobal = require('./Middleware/middlewareGlobal');
 const servidor = express()
 
 
@@ -18,8 +19,8 @@ servidor.set('view engine','ejs')
 
 
 
-
-
+//aplicando middleware
+servidor.use(middlewareGlobal)
 
 
 servidor.use ('/',filmesRouter)
