@@ -7,10 +7,13 @@ const servidor = express()
 
 servidor.use(express.static(path.join(__dirname, 'public')));
 
+servidor.use(express.urlencoded({ extended: false }));
+
+
 //importar os roteadores
 
 const filmesRouter = require('./routers/FilmesRouter')
-
+const AdmRouter = require('./routers/AdmRouter')
 
 
 //configuração  do template
@@ -24,7 +27,7 @@ servidor.use(middlewareGlobal)
 
 
 servidor.use ('/',filmesRouter)
-
+servidor.use ('/', AdmRouter)
 
 
 // Por o servidor para 'ouvir' as requisições
