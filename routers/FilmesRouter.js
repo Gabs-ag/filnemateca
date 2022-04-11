@@ -19,4 +19,6 @@ router.get('/buscaporid/:id', FilmesController.buscaPorId);
 
 router.get('/generos/:genero',FilmesController.buscarPorGenero);
 
+
+
 module.exports = router;

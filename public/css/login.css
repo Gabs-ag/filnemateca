@@ -11,17 +11,18 @@ html {
 }
 
 body{
-   background-color:rgb(216, 76, 183);
+background-color: rgb(216, 76, 183);
    display: flex;
    justify-content: center;
    align-items: center;
-   color: rgb(216, 76, 183);
+   color: rgb(33, 17, 64);
    height: 100%;
+   background-image:url('../img/papel-de-parede-flores-rosa-do-campo-na-primavera-fundo-nude-papel-de-parede-canjiquinha\ \(1\).jpg') ;
 }
 
 form{
     width: 600px;
-    background-color:white;
+    background-color:rgb(246, 246, 246);
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -51,3 +52,4 @@ form > label > input{
     padding: 10px;
     width: 40%;
 }
+
